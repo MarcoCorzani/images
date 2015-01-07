@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="images" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,55 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame1.png" translatesAutoresizingMaskIntoConstraints="NO" id="FEs-iT-Yoe">
+                                <rect key="frame" x="185" y="28" width="231" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="SMj-7d-CL7"/>
+                                    <constraint firstAttribute="width" constant="231" id="UDg-OG-jlg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-hP-4P8">
+                                <rect key="frame" x="252" y="343" width="97" height="30"/>
+                                <state key="normal" title="Update Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8ZV-W3-xap"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QU-JR-D4c">
+                                <rect key="frame" x="185" y="389" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="HgF-TT-jvk"/>
+                                    <constraint firstAttribute="width" constant="240" id="sIR-j6-HaT"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FEs-iT-Yoe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="3Kz-a4-3ms"/>
+                            <constraint firstAttribute="centerX" secondItem="FEs-iT-Yoe" secondAttribute="centerX" constant="-0.5" id="EqB-bW-5hk"/>
+                            <constraint firstAttribute="centerX" secondItem="5QU-JR-D4c" secondAttribute="centerX" constant="-5" id="IPo-m6-RRJ"/>
+                            <constraint firstAttribute="centerX" secondItem="fx5-hP-4P8" secondAttribute="centerX" constant="-0.5" id="Vhb-TD-UFV"/>
+                            <constraint firstItem="5QU-JR-D4c" firstAttribute="top" secondItem="fx5-hP-4P8" secondAttribute="bottom" constant="16" id="WoW-0p-L3g"/>
+                            <constraint firstItem="fx5-hP-4P8" firstAttribute="top" secondItem="FEs-iT-Yoe" secondAttribute="bottom" constant="60" id="jmp-Ya-rTp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alien" destination="FEs-iT-Yoe" id="qdD-Dd-k6o"/>
+                        <outlet property="text" destination="5QU-JR-D4c" id="6I3-be-dND"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame1.png" width="49" height="86"/>
+    </resources>
 </document>
